@@ -1,1 +1,3 @@
 # click-game
+
+A game bootstrapped by React and is played by making lots of clicks!  But just don't click on the same square twice...
