@@ -36,6 +36,7 @@ p {
 }
 
 .GameBody {
+  border: 3px solid oldlace;
   background-color: dimgrey;
   background-image: url(images/hubble.jpg);
   background-repeat: no-repeat;
