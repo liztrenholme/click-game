@@ -20,6 +20,9 @@ p {
   height: 150px;
   padding: 20px;
   color: white;
+  background-image: url("./images/galaxy.jpg");
+  background-size: cover;
+  background-blend-mode: hard-light;
 }
 
 .App-title {
@@ -44,6 +47,7 @@ p {
   background-size: cover;
   height: 30%;
   align-content: center;
+  margin: 4% 1%;
 }
 
 img {

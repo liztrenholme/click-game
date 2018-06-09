@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import './GameBody.js';
+import GameBody from './Components/GameBody';
 
-class HeaderBar extends Component {
+class App extends Component {
   render() {
     return (
       <div className="App">
@@ -15,10 +15,11 @@ class HeaderBar extends Component {
           Click on each image once. Sound easy?  Wait until they start shifting around!
         </p>
         </header>
+      <GameBody />
       </div>
     );
   }
 }
 
 
-export default HeaderBar;
+export default App;
