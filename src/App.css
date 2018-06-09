@@ -4,11 +4,19 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 20px;
+}
+
+h1 {
+  font-family: 'Audiowide', cursive;
+} 
+
+p {
+  font-family: 'Cute Font', cursive;
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #1f0320;
   height: 150px;
   padding: 20px;
   color: white;
@@ -25,4 +33,22 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.GameBody {
+  background-color: dimgrey;
+  background-image: url(images/hubble.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 30%;
+  align-content: center;
+}
+
+img {
+  width: 160px;
+  height: 120px;
+  border: 4px solid oldlace;
+  margin: 1%;
+  border-radius: 50px;
 }

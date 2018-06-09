@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import './GameBody.js';
 
-class App extends Component {
+class HeaderBar extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
+          { /*<img src={logo} className="App-logo" alt="logo" />*/}
+          <h1 className="App-title">Clicky Game</h1> 
+          <h1>Star Trek Style</h1>
+        
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          Click on each image once. Sound easy?  Wait until they start shifting around!
         </p>
+        </header>
       </div>
     );
   }
 }
 
-export default App;
+
+export default HeaderBar;
