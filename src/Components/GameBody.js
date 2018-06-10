@@ -5,12 +5,12 @@ import SwitchPics from './SwitchPics';
 //const id = pictureNums[8];
 
 class GameBody extends Component {
-    render () {
+    render() {
         return (
             <div className="GameBody">
-            <main className="GameMain">
-            <SwitchPics />
-            </main>
+                <main className="GameMain">
+                    <SwitchPics />
+                </main>
             </div>
         );
     }
