@@ -13,11 +13,12 @@ h1 {
 
 p {
   font-family: 'Cute Font', cursive;
+  margin-bottom: 2%;
 }
 
 .App-header {
   background-color: #1f0320;
-  height: 150px;
+  height: 8%;
   padding: 20px;
   color: white;
   background-image: url("./images/galaxy.jpg");
@@ -30,7 +31,7 @@ p {
 }
 
 .App-intro {
-  font-size: large;
+  font-size: 170%;
 }
 
 @keyframes App-logo-spin {
@@ -39,7 +40,7 @@ p {
 }
 
 .GameBody {
-  border: 3px solid oldlace;
+  border: 3px solid dimgray;
   background-color: dimgrey;
   background-image: url(images/hubble.jpg);
   background-repeat: no-repeat;

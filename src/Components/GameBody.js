@@ -8,7 +8,7 @@ class GameBody extends Component {
     render() {
         return (
             <div className="GameBody">
-                <main className="GameMain">
+                <main className="GameMain" id="gamePlay">
                     <SwitchPics />
                 </main>
             </div>
