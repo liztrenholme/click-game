@@ -24,73 +24,113 @@ const scrambleArray = (arr) => {
     return arr;
 };
 
-// onClick in html thing needed
-// scramble() gets called at onClick (MUST be camelcase in React?)
 class SwitchPics extends React.Component {
-
+    constructor(props) {
+        super(props);
+        this.imageClick = this.imageClick.bind(this);
+      }
     state = {
-        images: [{
-            key: 0,
+        score: 0,
+        topScore: 0,
+        whichImages: [{
+            id: 0,
             url: Pic1,
             clicked: false
         }, {
-            key: 1,
+            id: 1,
             url: Pic2,
             clicked: false
         }, {
-            key: 2,
+            id: 2,
             url: Pic3,
             clicked: false
         }, {
-            key: 3,
+            id: 3,
             url: Pic4,
             clicked: false
         }, {
-            key: 4,
+            id: 4,
             url: Pic5,
             clicked: false
         }, {
-            key: 5,
+            id: 5,
             url: Pic6,
             clicked: false
         }, {
-            key: 6,
+            id: 6,
             url: Pic7,
             clicked: false
         }, {
-            key: 7,
+            id: 7,
             url: Pic8,
             clicked: false
         }, {
-            key: 8,
+            id: 8,
             url: Pic9,
             clicked: false
         }]
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.scramble();
     }
 
-    scramble() {
-        scrambleArray(this.state.images);
+    // componentDidMount() {
+    //     this.setState({ whichImages: this.scramble(this.state.whichImages) });
+    //   }
+
+    scramble(whichImages) {
+        scrambleArray(this.state.whichImages);
         this.setState(this.state);
     }
 
-    imageClick(index, state) {
-        //const img = this.state.images[index];
-        //const img = this;
-        //img.clicked[index] = false;
-        
-        //scramble(this.state.images);
-         alert('clicked ' + index);
-    }
+    // showImages(img) {
+    //     if (img.clicked === false) {
+    //         img.clicked = true;
+    //     }
+    // }
+
+    // imageClick(event, showImages) {
+    //     let img = event.target.img;
+    //     //const img = this.state.images[index];
+    //     //const img = this;
+    //     //img.clicked[index] = false;
+    //     this.setState = {
+    //         whichImages: showImages.scramble(img)
+    //     }
+    // }
+    imageClick = id => {
+        let guessedCorrectly = false;
+        const newData = this.state.data.map(item => {
+          const newItem = { ...item };
+          if (newItem.id === id) {
+            if (!newItem.clicked) {
+              newItem.clicked = true;
+              guessedCorrectly = true;
+            }
+          }
+          return newItem;
+        });
+        guessedCorrectly
+          ? this.handleCorrectGuess(newData)
+          : this.handleIncorrectGuess(newData);
+      };
+
     render() {
         return (
             <div>
-                {this.state.images.map((img, index) =>
-                    <Picture imageClick={this.imageClick} key={index} img={img} />
-                )}
+                {/* {{this.state.whichImages.map((img, index) =>
+                    <Picture onClick={this.imageClick.bind(this)} key={index} img={img} />
+                )}} */}
+                {this.state.whichImages.map(item => (
+            <Picture
+              key={item.id}
+              id={item.id}
+              scramble={!this.state.score && this.state.topScore}
+              handleClick={this.imageClick}
+              image={item.img}
+            />
+          ))}
             </div>
         );
     }
