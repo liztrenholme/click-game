@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import '../App.css';
-// import SwitchPics from './SwitchPics';
 
 class Picture extends Component {
     render() {
         return (
             <div className="Picture">
-                <p>Picture here!</p>
+                <img src={this.props.url} alt={this.props.id} 
+                clicked={this.props.clicked} />
+                {/* {console.log(this.props.url)} */}
             </div>
         );
     }

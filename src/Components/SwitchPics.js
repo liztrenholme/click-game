@@ -25,47 +25,43 @@ const scrambleArray = (arr) => {
 };
 
 class SwitchPics extends React.Component {
-    constructor(props) {
-        super(props);
-        this.imageClick = this.imageClick.bind(this);
-      }
     state = {
         score: 0,
         topScore: 0,
         whichImages: [{
-            id: 0,
+            key: 0,
             url: Pic1,
             clicked: false
         }, {
-            id: 1,
+            key: 1,
             url: Pic2,
             clicked: false
         }, {
-            id: 2,
+            key: 2,
             url: Pic3,
             clicked: false
         }, {
-            id: 3,
+            key: 3,
             url: Pic4,
             clicked: false
         }, {
-            id: 4,
+            key: 4,
             url: Pic5,
             clicked: false
         }, {
-            id: 5,
+            key: 5,
             url: Pic6,
             clicked: false
         }, {
-            id: 6,
+            key: 6,
             url: Pic7,
             clicked: false
         }, {
-            id: 7,
+            key: 7,
             url: Pic8,
             clicked: false
         }, {
-            id: 8,
+            key: 8,
             url: Pic9,
             clicked: false
         }]
@@ -75,62 +71,44 @@ class SwitchPics extends React.Component {
         this.scramble();
     }
 
-    // componentDidMount() {
-    //     this.setState({ whichImages: this.scramble(this.state.whichImages) });
-    //   }
-
-    scramble(whichImages) {
+    scramble() {
         scrambleArray(this.state.whichImages);
         this.setState(this.state);
     }
-
-    // showImages(img) {
-    //     if (img.clicked === false) {
-    //         img.clicked = true;
-    //     }
-    // }
-
-    // imageClick(event, showImages) {
-    //     let img = event.target.img;
-    //     //const img = this.state.images[index];
-    //     //const img = this;
-    //     //img.clicked[index] = false;
-    //     this.setState = {
-    //         whichImages: showImages.scramble(img)
-    //     }
-    // }
-    imageClick = id => {
-        let guessedCorrectly = false;
-        const newData = this.state.data.map(item => {
-          const newItem = { ...item };
-          if (newItem.id === id) {
-            if (!newItem.clicked) {
-              newItem.clicked = true;
-              guessedCorrectly = true;
-            }
-          }
-          return newItem;
-        });
-        guessedCorrectly
-          ? this.handleCorrectGuess(newData)
-          : this.handleIncorrectGuess(newData);
-      };
+    // imageClick = id => {
+    //     let guessedCorrectly = false;
+    //     const newData = this.state.data.map(item => {
+    //         const newItem = { ...item };
+    //         if (newItem.id === id) {
+    //             if (!newItem.clicked) {
+    //                 newItem.clicked = true;
+    //                 guessedCorrectly = true;
+    //             }
+    //         }
+    //         return newItem;
+    //     });
+    //     guessedCorrectly
+    //         ? this.handleCorrectGuess(newData)
+    //         : this.handleIncorrectGuess(newData);
+    // };
 
     render() {
         return (
-            <div>
+            <div className="grid-container">
                 {/* {{this.state.whichImages.map((img, index) =>
                     <Picture onClick={this.imageClick.bind(this)} key={index} img={img} />
                 )}} */}
                 {this.state.whichImages.map(item => (
-            <Picture
-              key={item.id}
-              id={item.id}
-              scramble={!this.state.score && this.state.topScore}
-              handleClick={this.imageClick}
-              image={item.img}
-            />
-          ))}
+                    <div className="grid-item">
+                        <Picture
+                            key={item.key}
+                            id={item.key}
+                            scramble={!item.score && item.topScore}
+                            handleClick={item.imageClick}
+                            url={item.url}
+                        />
+                    </div>
+                ))}
             </div>
         );
     }
