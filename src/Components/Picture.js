@@ -1,22 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
+import '../App.css';
+// import SwitchPics from './SwitchPics';
 
-const Picture = (props) => {
-    return (
-    
-    //     <img src={props.img.url} alt="img"
-    //         onClick={() => props.imageClick.bind(props)}
-    //     />
-    // ;
-    // return (
-    //         <img src={props.img.url} />
-    // );
-<div
-    role="img"
-    onClick={() => props.imageClick(props.id)}
-  />
-    )
+class Picture extends Component {
+    render() {
+        return (
+            <div className="Picture">
+                <p>Picture here!</p>
+            </div>
+        );
+    }
 }
-
 
 
 export default Picture;
