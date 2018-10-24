@@ -31,39 +31,39 @@ class SwitchPics extends React.Component {
         whichImages: [{
             key: 0,
             url: Pic1,
-            clicked: false
+            clicked: "false"
         }, {
             key: 1,
             url: Pic2,
-            clicked: false
+            clicked: "false"
         }, {
             key: 2,
             url: Pic3,
-            clicked: false
+            clicked: "false"
         }, {
             key: 3,
             url: Pic4,
-            clicked: false
+            clicked: "false"
         }, {
             key: 4,
             url: Pic5,
-            clicked: false
+            clicked: "false"
         }, {
             key: 5,
             url: Pic6,
-            clicked: false
+            clicked: "false"
         }, {
             key: 6,
             url: Pic7,
-            clicked: false
+            clicked: "false"
         }, {
             key: 7,
             url: Pic8,
-            clicked: false
+            clicked: "false"
         }, {
             key: 8,
             url: Pic9,
-            clicked: false
+            clicked: "false"
         }]
     }
 
@@ -91,24 +91,33 @@ class SwitchPics extends React.Component {
     //         ? this.handleCorrectGuess(newData)
     //         : this.handleIncorrectGuess(newData);
     // };
-
+    handleClick(event) { // this is what happens when the click is clicked
+        let url = event.target.url;
+        this.setState({
+            whichImages: this.scrambleArray(url),
+            clicked: this.clicked = true
+        });
+        
+    }
     render() {
         return (
             <div className="grid-container">
                 {/* {this.state.whichImages.map((img, index) =>
                     <Picture onClick={this.imageClick.bind(this)} key={index} img={img} />
                 )} */}
+                {/* {this.state.handleClick} */}
                 {this.state.whichImages.map(item => (
-                    <div className="grid-item">
-                        <Picture
-                            key={item.key}
-                            id={item.key}
-                            scramble={!item.score && item.topScore}
-                            handleClick={item.imageClick}
-                            url={item.url}
-                        />
-                    </div>
-                ))}
+            <div className="grid-item">
+                <Picture
+                    key={item.key}
+                    id={item.key}
+                    scramble={!item.score && item.topScore}
+                    onClick={this.handleClick.bind(this)}
+                    clicked={item.clicked}
+                    url={item.url}
+                />
+            </div>
+        ))}
             </div>
         );
     }
