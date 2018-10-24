@@ -7,11 +7,9 @@ class Picture extends Component {
             <div className="Picture">
                 <img src={this.props.url} alt={this.props.id} 
                 clicked={this.props.clicked} />
-                {/* {console.log(this.props.url)} */}
             </div>
         );
     }
 }
-
 
 export default Picture;

@@ -95,9 +95,9 @@ class SwitchPics extends React.Component {
     render() {
         return (
             <div className="grid-container">
-                {/* {{this.state.whichImages.map((img, index) =>
+                {/* {this.state.whichImages.map((img, index) =>
                     <Picture onClick={this.imageClick.bind(this)} key={index} img={img} />
-                )}} */}
+                )} */}
                 {this.state.whichImages.map(item => (
                     <div className="grid-item">
                         <Picture

@@ -52,5 +52,13 @@ img {
 .grid-container {
 	display: grid;
 	justify-content: space-around;
-	grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto;
+  margin: 2%;
+  }
+
+  @media (max-width: 967.98px) {
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto;
+    }
   }
