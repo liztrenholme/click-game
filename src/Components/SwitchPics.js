@@ -95,9 +95,9 @@ class SwitchPics extends React.Component {
         let url = event.target.url;
         this.setState({
             whichImages: this.scrambleArray(url),
-            clicked: this.clicked = true
+            clicked: this.clicked = "true"
         });
-        
+        console.log(this);
     }
     render() {
         return (
@@ -107,17 +107,16 @@ class SwitchPics extends React.Component {
                 )} */}
                 {/* {this.state.handleClick} */}
                 {this.state.whichImages.map(item => (
-            <div className="grid-item">
-                <Picture
-                    key={item.key}
-                    id={item.key}
-                    scramble={!item.score && item.topScore}
-                    onClick={this.handleClick.bind(this)}
-                    clicked={item.clicked}
-                    url={item.url}
-                />
-            </div>
-        ))}
+                    <div className="grid-item">
+                        <Picture
+                            url={item.url}
+                            id={item.key}
+                            // scramble={!item.score && item.topScore}
+                            onClick={this.handleClick.bind(this)}
+                            clicked={item.clicked}
+                        />
+                    </div>
+                ))}
             </div>
         );
     }

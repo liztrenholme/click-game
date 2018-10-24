@@ -6,7 +6,7 @@ class Picture extends Component {
         return (
             <div className="Picture">
                 <img src={this.props.url} alt={this.props.id} 
-                clicked={this.props.clicked} />
+                clicked={this.props.clicked} onClick={this.props.onClick}/>
             </div>
         );
     }
