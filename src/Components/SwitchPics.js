@@ -94,7 +94,7 @@ class SwitchPics extends React.Component {
     handleClick(event) { // this is what happens when the click is clicked
         let url = event.target.url;
         this.setState({
-            whichImages: this.scrambleArray(url),
+            whichImages: this.scramble(url),
             clicked: this.clicked = "true"
         });
         console.log(this);
