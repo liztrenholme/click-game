@@ -54,10 +54,10 @@ p {
   border-radius: 50px;
 }
 .gameOverText {
-  color: #e433e5;
+  color: #fff;
 }
 
-.gameOver {
+.gameOver, .youWon {
   width: 80%;
   border: 4px solid oldlace;
   margin: 1%;

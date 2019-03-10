@@ -12,6 +12,7 @@ import Pic6 from '../images/pic7.jpg';
 import Pic7 from '../images/pic8.jpg';
 import Pic8 from '../images/pic9.jpg';
 import GameOver from '../images/gameover.jpg'
+import YouWon from '../images/win.jpg'
 
 const scrambleArray = (arr) => {
     let i,
@@ -74,7 +75,7 @@ class GameBody extends Component {
         let score = this.state.score
         console.log(this.state.score)
         event ? (score.includes(event.target.name) ?
-            this.setState({ gameOver: true }) : score.push(event.target.name)) : null
+            this.setState({ gameOver: true }) : score.push(event.target.name)) : event = undefined
         let newArr = scrambleArray(this.state.whichImages)
         event ?
             this.setState({
@@ -85,7 +86,13 @@ class GameBody extends Component {
             this.setState({
                 whichImages: newArr
             })
-
+            if (this.state.score.length === 9) {
+                let topScore = this.state.topScore + 1
+                this.setState({
+                    topScore: topScore,
+                    score: []
+                })
+            }
     }
 
     render() {
@@ -95,7 +102,15 @@ class GameBody extends Component {
                     score={this.state.score}
                     topScore={this.state.topScore} />
                 <main className="GameMain">
-                    {this.state.gameOver ?
+                    {this.state.score.length === 9 ?
+                    <div>
+                    <h1 className='gameOverText'>You won!</h1>
+                    <img
+                        className='youWon'
+                        src={YouWon}
+                        alt='You won!' />
+                </div> :
+                        this.state.gameOver ?
                         <div>
                             <h1 className='gameOverText'>Game over!</h1>
                             <img
