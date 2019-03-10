@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import '../App.css';
-// import SwitchPics from './SwitchPics';
 
 class Counter extends Component {
     render() {
         return (
             <div className="Counter">
-                <p>counter here</p>
+                <h3>Current Score: {this.props.score.length ? this.props.score.length : '0'}  Top Score: {this.props.topScore}</h3>
             </div>
         );
     }
