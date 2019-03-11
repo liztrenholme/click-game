@@ -11,8 +11,8 @@ import Pic5 from '../images/pic6.jpg';
 import Pic6 from '../images/pic7.jpg';
 import Pic7 from '../images/pic8.jpg';
 import Pic8 from '../images/pic9.jpg';
-import GameOver from '../images/gameover.jpg'
-import YouWon from '../images/win.jpg'
+import YouWon from './YouWon'
+import YouLost from './YouLost'
 
 const scrambleArray = (arr) => {
     let i,
@@ -29,6 +29,8 @@ const scrambleArray = (arr) => {
 
 class GameBody extends Component {
     state = {
+        win: false,
+        playAgainBtn: false,
         score: [],
         topScore: 0,
         gameOver: false,
@@ -86,39 +88,38 @@ class GameBody extends Component {
             this.setState({
                 whichImages: newArr
             })
-            if (this.state.score.length === 9) {
-                let topScore = this.state.topScore + 1
-                this.setState({
-                    topScore: topScore,
-                    score: []
-                })
-            }
+        if (this.state.score.length === 9) {
+            let topScore = this.state.topScore + 1
+            this.setState({
+                topScore: topScore,
+                score: [],
+                win: true,
+                gameOver: true
+            })
+        }
+    }
+
+    playAgain = () => {
+        this.setState({
+            score: [],
+            gameOver: false,
+            playAgainBtn: false,
+            win: false
+        })
     }
 
     render() {
         return (
             <div className="GameBody">
                 <Counter
+                    gameOver={this.state.gameOver}
+                    playAgain={this.playAgain}
                     score={this.state.score}
                     topScore={this.state.topScore} />
                 <main className="GameMain">
-                    {this.state.score.length === 9 ?
-                    <div>
-                    <h1 className='gameOverText'>You won!</h1>
-                    <img
-                        className='youWon'
-                        src={YouWon}
-                        alt='You won!' />
-                </div> :
-                        this.state.gameOver ?
-                        <div>
-                            <h1 className='gameOverText'>Game over!</h1>
-                            <img
-                                className='gameOver'
-                                src={GameOver}
-                                alt='Game over' />
-                        </div> :
-                        <SwitchPics
+                    {this.state.gameOver ? (this.state.win ?
+                        <YouWon /> : <YouLost />)
+                        : <SwitchPics
                             whichImages={this.state.whichImages}
                             scramble={this.scramble}
                         />}

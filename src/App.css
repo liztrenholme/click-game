@@ -34,6 +34,16 @@ p {
   color: #000;
   font-family: 'Audiowide', cursive;
 }
+
+.playAgain {
+  background-color: #000;
+  border: 3px solid #343c32;
+  margin: 1%;
+  border-radius: 20px;
+  font-family: 'Audiowide', cursive;
+  color: #fff;
+}
+
 .GameBody {
   border: 3px solid dimgray;
   background-color: dimgrey;
@@ -55,6 +65,24 @@ p {
 }
 .gameOverText {
   color: #fff;
+  animation: gameover 3s;
+  -webkit-animation: gameover 3s;
+}
+
+@keyframes gameover { from {
+  transform: scale(0);
+}
+to {
+  transform: scale(1);
+  }
+}
+@-webkit-keyframes gameover {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 .gameOver, .youWon {
