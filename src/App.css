@@ -17,8 +17,10 @@ p {
   padding: 20px;
   color: white;
   background-image: url("./images/galaxy.jpg");
+  background-attachment: fixed;
   background-size: cover;
   background-blend-mode: hard-light;
+  border-radius: 30px;
 }
 
 .App-title {
@@ -33,6 +35,7 @@ p {
   background-color: #e433e5;
   color: #000;
   font-family: 'Audiowide', cursive;
+  border-radius: 25px 25px 0 0;
 }
 
 .playAgain {
@@ -54,6 +57,7 @@ p {
   height: 30%;
   width: 100%;
   margin: 4% 1%;
+  border-radius: 30px;
 }
 
 .avatar {
