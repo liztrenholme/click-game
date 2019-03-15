@@ -75,27 +75,34 @@ class GameBody extends Component {
 
     scramble = (event) => {
         let score = this.state.score
-        console.log(this.state.score)
+        let topScore = this.state.topScore
+        
         event ? (score.includes(event.target.name) ?
-            this.setState({ gameOver: true }) : score.push(event.target.name)) : event = undefined
+            this.setState({ gameOver: true }) :
+            score.push(event.target.name)) : event = undefined
         let newArr = scrambleArray(this.state.whichImages)
         event ?
             this.setState({
+                topScore,
                 whichImages: newArr,
                 [event.target.name]: true,
-                score: score
+                score
             }) :
             this.setState({
                 whichImages: newArr
             })
+            if (topScore < score.length) {
+                topScore++
+                this.setState({
+                    topScore
+                })
+            }
         if (this.state.score.length === 9) {
-            let topScore = this.state.topScore + 1
             this.setState({
-                topScore: topScore,
                 score: [],
                 win: true,
                 gameOver: true
-            })
+            }) 
         }
     }
 
