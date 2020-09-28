@@ -1,23 +1,39 @@
-self.__precacheManifest = [
+self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f1fa38e0e216efccae16",
-    "url": "/click-game/static/css/main.e3515bea.chunk.css"
+    "revision": "b6d74d96e2ca8760a915a8a36ee918f4",
+    "url": "/click-game/index.html"
   },
   {
-    "revision": "f1fa38e0e216efccae16",
-    "url": "/click-game/static/js/main.38e1ef4d.chunk.js"
+    "revision": "e6b583412a4b9d8fdc82",
+    "url": "/click-game/static/css/main.2ddbba70.chunk.css"
   },
   {
-    "revision": "aa765b97c1e7aaa53c3e",
-    "url": "/click-game/static/js/runtime~main.7d043b49.js"
+    "revision": "2949245874d30cbb9f94",
+    "url": "/click-game/static/js/2.35785be0.chunk.js"
   },
   {
-    "revision": "13261f48d341b80ce102",
-    "url": "/click-game/static/js/2.b7e45837.chunk.js"
+    "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
+    "url": "/click-game/static/js/2.35785be0.chunk.js.LICENSE.txt"
+  },
+  {
+    "revision": "e6b583412a4b9d8fdc82",
+    "url": "/click-game/static/js/main.24514f54.chunk.js"
+  },
+  {
+    "revision": "53021ac0b94d203cb58d",
+    "url": "/click-game/static/js/runtime-main.46fbd14d.js"
   },
   {
     "revision": "069914b83da83d8fefccab734298ccdc",
     "url": "/click-game/static/media/galaxy.069914b8.jpg"
+  },
+  {
+    "revision": "d45046e41834c800c2392f2c2a4425e6",
+    "url": "/click-game/static/media/galaxy3.d45046e4.jpg"
+  },
+  {
+    "revision": "91f6354d1efeff060f4690a40ab39f9d",
+    "url": "/click-game/static/media/gameover.91f6354d.jpg"
   },
   {
     "revision": "307691e39e3c96a96cbae140b220addd",
@@ -62,17 +78,5 @@ self.__precacheManifest = [
   {
     "revision": "bf865e8eecab83c133e8da66a8784dfd",
     "url": "/click-game/static/media/win.bf865e8e.jpg"
-  },
-  {
-    "revision": "91f6354d1efeff060f4690a40ab39f9d",
-    "url": "/click-game/static/media/gameover.91f6354d.jpg"
-  },
-  {
-    "revision": "d45046e41834c800c2392f2c2a4425e6",
-    "url": "/click-game/static/media/galaxy3.d45046e4.jpg"
-  },
-  {
-    "revision": "04bd1472162408b2008200b8e5371f06",
-    "url": "/click-game/index.html"
   }
-];
+]);
